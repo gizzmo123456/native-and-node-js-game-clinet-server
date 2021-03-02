@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Mocha Tests</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://unpkg.com/mocha/mocha.css" />
+
+    <script src="/socket.io/socket.io.js"></script> <!-- required to test io client socket -->
+    <script src="/common/connectionManager.com.js" type="module"></script>
+
+  </head>
+  <body>
+    <div id="mocha"></div>
+    <!-- TODO: Update to local versions -->
+    <script src="https://unpkg.com/chai/chai.js"></script>
+    <script src="https://unpkg.com/mocha/mocha.js"></script>
+
+    <script class="mocha-init">
+      mocha.setup('tdd');
+    </script>
+
+    <!-- TESTS -->
+    <script src="connectionManager.Client.Test.Native.js" type="module"></script>
+    
+    <!-- RUN -->
+    <script class="mocha-exec" type="module">
+        mocha.checkLeaks();
+        mocha.run();
+      </script>
+  </body>
+</html>

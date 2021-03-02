@@ -1,0 +1,14 @@
+{
+  "name": "mocha-test",
+  "version": "1.0.0",
+  "description": "test node js project for a WRTC client",
+  "author": "AMS",
+  "main": "index.n.js",
+  "scripts": {
+    "test": "mocha ./test/**/*.node.js"
+  },
+  "dependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^8.2.1"
+  }
+}

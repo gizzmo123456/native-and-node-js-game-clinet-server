@@ -1,0 +1,16 @@
+**/node_modules/
+**/-TEST-*/
+*.ini
+
+# Python and pycharm
+# Mininet/Containernet
+Containernet Scripts/Network-topologies/.idea
+Containernet Scripts/Network-topologies/venv
+Containernet Scripts/Network-topologies/__pycache__
+
+# Logs (only include the readme so the directy shows up in git!)
+App/logs/*
+!App/logs/README.md
+
+# dont include the performance data in the repo
+/App-performance-data/

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Web Client</title>
+        <script src="/socket.io/socket.io.js"></script>
+        <link rel="stylesheet" href="./includes/style.css" />
+        <style>
+            #page-title{
+                margin-top: 5px;
+                margin-bottom: 5px;
+                font-size: 18px;
+            }
+
+            #viewport, #debug, #status-bar{
+                border: solid 1px black;
+            }
+
+            /* status bar */
+
+            #status-bar{
+                margin-top: 6px;
+                height: 25px;
+            }
+
+            p.status-hold{
+                display: inline-block;
+                margin: 4px 0px 4px 0px;
+            }
+
+            /* debug */
+
+            #debug{
+                margin-top: 6px;
+                height: 100px;
+                overflow: auto;
+            }
+
+            p.de{
+                margin: 4px 0px 4px 0px;
+            }
+            p.de-warn{
+                color: yellow;
+            }
+
+            p.de-error{
+                color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 id="page-title">Browser Client -<span id="sim-name">{Simulation Name}</span></h1>
+        <canvas id="viewport" width="800" height="600"></canvas>
+        <div id="status-bar">
+            <p class="status-hold">FPS: <span id="fps">--</span></p>
+            <p class="status-hold">Delta Time: <span id="delta-time">--</span>ms</p>
+            <p class="status-hold">Time Since Start: <span id="since-start-time">--</span>sec</p>
+            <p class="status-hold">GO Count: <span id="gameObject-count">--</span>sec</p>
+        </div>
+        <div id="debug">
+            <b>Debug</b>
+            <p id="debug-text" class="de de-log">Log</p>
+            <p id="debug-text" class="de de-error">Error</p>
+            <p id="debug-text" class="de de-warn">Warn</p>
+        </div>
+    </body>
+    <script src="./includes/js/main.native.js" type="module" ></script>
+</html> 

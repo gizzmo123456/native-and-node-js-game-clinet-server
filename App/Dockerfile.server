@@ -1,0 +1,36 @@
+FROM node:14.15.4-alpine3.12
+
+# To run alpine in containers running in containernet we must add the follow packages
+# for some reason iperf from docker containers is not working, from host to docker is 
+# fine tho. See this https://github.com/containernet/containernet/issues/133, 
+# i just cant seem to get it to work :(
+# Note libc6-compat is required for WebRTC in node
+RUN apk add --update --no-cache \
+        bash \
+        tcpdump \
+        net-tools\
+        iputils \
+        iproute2 \
+        iperf \
+        busybox-extras \
+        curl \
+        libc6-compat
+
+CMD /bin/bash
+CMD "ln -s /lib/libc.musl-x86_64.so.1 /lib/ld-linux-x86-64.so.2"
+
+# change to the apps directory and install the npm packages 
+WORKDIR /usr/src/app
+
+COPY package*.json ./
+
+RUN npm install
+
+# Note: We should really only copy in the files needed to run the comp 
+# but all will do for now :P
+copy . .
+
+EXPOSE 9333
+
+# We need to run the command in the containernet script.
+# CMD [ "npm", "run", "start-middlebox-ws"]

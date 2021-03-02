@@ -1,0 +1,28 @@
+{
+  "type": "module",
+  "name": "app",
+  "version": "0.0.1",
+  "description": "HTTP/Signaling Server and Node.js Client App",
+  "author": "AMS",
+  "scripts": {
+    "start-server": "node ./main.node.js",
+    "start-middlebox-ws": "node ./private/gameMiddlebox.node.js ws",
+    "start-middlebox-rtc": "node ./private/gameMiddlebox.node.js rtc",
+    "start-client": "node ./private/client.node.js",
+    "test-server": "mocha ./private/test/server/*.Test.*.js",
+    "test-middlebox": "mocha ./private/test/GameMiddlebox/*.Test.*.js",
+    "test-client": "mocha ./private/test/client/Node/*.Test.*.js",
+    "test-node": "mocha ./private/test/**/*.Test.Node.js",
+    "test-inter": " mocha ./private/Test/IntergrationTest/test.clientAndServerItergration.Test.Node.js"
+  },
+  "dependencies": {
+    "chai": "^4.2.0",
+    "express": "^4.17.1",
+    "mocha": "^8.2.1",
+    "request": "^2.88.2",
+    "socket.io": "^3.0.4",
+    "socket.io-client": "^3.0.4",
+    "wrtc": "^0.4.6",
+    "ws": "^7.4.1"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "name": "nodejs-wrtc-client-test",
+  "version": "1.0.0",
+  "description": "test node js project for a WRTC client",
+  "author": "AMS",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^3.0.4",
+    "socket.io-client": "^3.0.4",
+    "wrtc": "^0.4.6"
+  }
+}

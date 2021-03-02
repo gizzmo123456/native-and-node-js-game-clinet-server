@@ -1,0 +1,32 @@
+FROM node:14.15.4-alpine3.12
+
+# To run alpine in containers running in containernet we must add the follow packages
+# for some reason iperf from docker containers is not working, from host to docker is 
+# fine tho. See this https://github.com/containernet/containernet/issues/133, 
+# i just cant seem to get it to work :(
+RUN apk add --update --no-cache \
+        bash \
+        tcpdump \
+        net-tools\
+        iputils \
+        iproute2 \
+        iperf \
+        busybox-extras \
+        curl \
+
+#CMD /bin/bash
+
+# change to the apps directory and install the npm packages 
+WORKDIR /usr/src/app
+
+COPY package*.json ./
+
+RUN npm install
+
+# Note: We should really only copy in the files needed to run the comp 
+# but all will do for now :P
+copy . .
+
+EXPOSE 8333
+
+#CMD [ "npm", "run", "start-server"]

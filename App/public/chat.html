@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Web Client</title>
+        <script src="/socket.io/socket.io.js"></script>
+        <link rel="stylesheet" href="./includes/style.css" />
+        <style>
+            #view {
+                display: block;
+                position: absolute;
+                border: solid 1px black;
+                width: 800px;
+                height: 89%;
+                margin: 0px;
+                padding: 0px;
+                box-sizing: border-box;
+
+            }
+
+            #send, #input{
+                display: inline-block;
+                position: fixed;
+                height: 10%;
+                bottom: 0px;
+                margin: 0px;
+                padding: 0px;
+                box-sizing: border-box;
+            }
+            #send{
+                width: 150px;
+                left: 658px;
+            }
+            #input{
+                width: 650px;
+                font-size: 32px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="view" > <b>Messager! :|<br /></b> </div>
+        <input type="text" id="input" />
+        <button id="send" > >> Send >> </button>
+    </body>
+    <script src="./includes/js/main.native.js" type="module" ></script>
+</html>
