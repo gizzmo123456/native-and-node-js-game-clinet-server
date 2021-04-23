@@ -1,4 +1,4 @@
-# Please note this is currently incomplete and will be updated in th comeing days
+# Please note this is currently incomplete and will be updated in th comeing days from a private repo
 
 # Individual Final-Year 'Major' Computing Project
 ## COMP320/COMP360
