@@ -1,3 +1,5 @@
+# Please note this is currently incomplete and will be updated in th comeing days
+
 # Individual Final-Year 'Major' Computing Project
 ## COMP320/COMP360
 
